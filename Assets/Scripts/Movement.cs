@@ -5,10 +5,13 @@ public class Movement : MonoBehaviour {
 
 	public Bullet bullet;
 
+	public GameObject[] colors;
+
 	public Vector2 moveSpeed = new Vector2(10f, 0f);
 	public Vector2 jumpForce = new Vector2(0f, 5f);
 
 	Rigidbody2D rb;
+	Color colorChosen;
 
 	bool amIDead;
 
@@ -19,6 +22,7 @@ public class Movement : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		rb.velocity = moveSpeed;
+		colorChosen = Color.red;
 	}
 	
 	// Update is called once per frame
@@ -44,7 +48,42 @@ public class Movement : MonoBehaviour {
 	}
 
 	void Shoot() {
-		Instantiate(bullet, transform);
+		var tempBullet = Instantiate(bullet, transform);
+		bullet.sprite.color = colorChosen;
+	}
+
+	public void PickColor(int color) {
+		switch (color)
+		{
+			case 0:
+				colors[0].transform.GetChild(0).gameObject.SetActive(true);
+				colors[1].transform.GetChild(0).gameObject.SetActive(false);
+				colors[2].transform.GetChild(0).gameObject.SetActive(false);
+				colors[3].transform.GetChild(0).gameObject.SetActive(false);
+				colorChosen = Color.red;
+				break;
+			case 1:
+				colors[1].transform.GetChild(0).gameObject.SetActive(true);
+				colors[0].transform.GetChild(0).gameObject.SetActive(false);
+				colors[2].transform.GetChild(0).gameObject.SetActive(false);
+				colors[3].transform.GetChild(0).gameObject.SetActive(false);
+				colorChosen = Color.green;
+				break;
+			case 2:
+				colors[2].transform.GetChild(0).gameObject.SetActive(true);
+				colors[1].transform.GetChild(0).gameObject.SetActive(false);
+				colors[0].transform.GetChild(0).gameObject.SetActive(false);
+				colors[3].transform.GetChild(0).gameObject.SetActive(false);
+				colorChosen = Color.blue;
+				break;
+			case 3:
+				colors[3].transform.GetChild(0).gameObject.SetActive(true);
+				colors[1].transform.GetChild(0).gameObject.SetActive(false);
+				colors[2].transform.GetChild(0).gameObject.SetActive(false);
+				colors[0].transform.GetChild(0).gameObject.SetActive(false);
+				colorChosen = Color.yellow;
+				break;
+		}
 	}
 
 	public void OnCollisionEnter2D(Collision2D collision)
