@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4578042307304590}
   - component: {fileID: 61289232271928956}
   - component: {fileID: 50641986288687156}
+  - component: {fileID: 114745139096930030}
   m_Layer: 0
   m_Name: AirEnemy
   m_TagString: Untagged
@@ -37,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4287464896043176}
   - component: {fileID: 212454209645247792}
+  - component: {fileID: 114471135336701006}
   m_Layer: 0
   m_Name: shape
   m_TagString: Untagged
@@ -64,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419115993049700}
   m_LocalRotation: {x: -0, y: -0, z: 0.70710677, w: 0.7071068}
-  m_LocalPosition: {x: 12.799999, y: 0.9999998, z: 0}
+  m_LocalPosition: {x: 15.858483, y: 9.815062, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4287464896043176}
@@ -116,6 +118,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29091454, y: 1.3462982}
   m_EdgeRadius: 0
+--- !u!114 &114471135336701006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594970365294804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce34cec91ba34b339c4d33297d7e8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inAir: 0
+--- !u!114 &114745139096930030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419115993049700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce34cec91ba34b339c4d33297d7e8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inAir: 1
 --- !u!212 &212454209645247792
 SpriteRenderer:
   m_ObjectHideFlags: 1

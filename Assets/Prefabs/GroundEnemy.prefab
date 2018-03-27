@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4357866878145334}
   - component: {fileID: 61112274065424940}
   - component: {fileID: 50299519161746596}
+  - component: {fileID: 114573607557260058}
   m_Layer: 0
   m_Name: GroundEnemy
   m_TagString: Untagged
@@ -116,6 +117,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29091454, y: 1.3462982}
   m_EdgeRadius: 0
+--- !u!114 &114573607557260058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651413210432396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce34cec91ba34b339c4d33297d7e8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inAir: 0
 --- !u!212 &212202438071996446
 SpriteRenderer:
   m_ObjectHideFlags: 1

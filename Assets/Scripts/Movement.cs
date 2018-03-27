@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour {
 
 	public Bullet bullet;
 
+	public GameObject deadPanel;
+
 	public GameObject[] colors;
 
 	public Vector2 moveSpeed = new Vector2(10f, 0f);
@@ -80,7 +82,7 @@ public class Movement : MonoBehaviour {
 		}
 	}
 
-	private void ToggleUi(int toCheck)
+	void ToggleUi(int toCheck)
 	{
 		for (int i = 0; i < colors.Length; i++)
 		{
@@ -106,7 +108,15 @@ public class Movement : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-		print("I'm DEAD");
+		print("[Move] I'm DEAD");
+		Time.timeScale = 0.01f;
+		deadPanel.SetActive(true);
 		//SceneManager.LoadScene(0);
+		//Debug.Break();
+	}
+
+	public void Restart() {
+		SceneManager.LoadScene(0);
+		Time.timeScale = 1f;
 	}
 }
