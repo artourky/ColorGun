@@ -1,22 +1,18 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class CameraMovement : MonoBehaviour {
 
-	public Transform player;
-
-	Vector3 offset;
-	Vector3 playerXZOnly;
+	Rigidbody2D rb;
 
 	// Use this for initialization
-	void Start () {
-		offset = transform.position - player.position;
-		//offset.y = 0f;
+	void Awake () {
+		rb = GetComponent<Rigidbody2D>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		playerXZOnly = player.position;
-		playerXZOnly.y = 0f;
-		transform.position = playerXZOnly + offset;
+
+	public void SetSpeed(Vector2 speed) {
+		//print(speed);
+		//print(rb);
+		rb.velocity = speed;
 	}
 }
